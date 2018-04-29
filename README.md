@@ -1,5 +1,7 @@
 # Titanic-ML
 
+(TensorFlow project is not fully fonctional yet)
+
 Predict if a passenger survived the sinking of the Titanic or not. (0 or 1 value for the Survived variable.)
 For each PassengerId in the test set.
 
