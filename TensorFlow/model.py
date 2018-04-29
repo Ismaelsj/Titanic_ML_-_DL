@@ -103,8 +103,8 @@ def neural_network(x_train, y_train, parameters, model):
                 cost_list.append(epoch_cost)
             if (epoch % 100 == 0):
                 print ("Cost after epoch {0}: {1}".format(epoch, epoch_cost)) 
-                print("Training output:\n{}\n".format(sess.run(model['prediction'], feed_dict={model['X']: batch_x, model['Y']: batch_y})))
-                print("Real output: \n{}".format(batch_y))
+                #print("Training output:\n{}\n".format(sess.run(model['prediction'], feed_dict={model['X']: batch_x, model['Y']: batch_y})))
+                #print("Real output: \n{}".format(batch_y))
         print("Accuracy : {}%".format(sess.run(model['accuracy'], feed_dict={model['X']: batch_x, model['Y']: batch_y}) * 100))
         #save_path = saver.save(sess, 'Titanic')
         #print("Model saved in path: %s" % save_path)
