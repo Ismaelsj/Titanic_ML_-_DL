@@ -12,9 +12,9 @@ For each PassengerId in the test set.
 			- Pandas
 			- Sklearn
 
-Usage: python3 main.py [-n]
+	Usage: python3 main.py [-n]
 
-Use '-n' to use a model already build.
+	Use '-n' to use a model already build.
 
 
 - TensorFlow, running with neural network:
@@ -24,6 +24,6 @@ Use '-n' to use a model already build.
 			- Pandas
 			- tensoflow
 
-Usage: python3 main.py [-v]
+	Usage: python3 main.py [-v]
 
-Use '-v' to use visualize.
+	Use '-v' to use visualize.
