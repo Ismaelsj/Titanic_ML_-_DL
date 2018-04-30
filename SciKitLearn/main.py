@@ -22,7 +22,8 @@ def main():
         if (len(argv) > 1 and argv[1] == '-n'):
             print("\nNo model found.\nBuilding a new one...")
         clf = model_process.build_clf_model(X_train, Y_train)
-        # Print features importance
+
+      # Print features importance
     estimations_and_accuracy.feature_ranking(X, X_train, clf)
         # Print accuracy
     estimations_and_accuracy.model_accuracy(clf, X_train, Y_train, X_test, Y_test)
