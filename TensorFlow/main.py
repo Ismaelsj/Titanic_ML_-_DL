@@ -17,23 +17,22 @@ def main():
 
         # Set parameters
     parameters = {}
-    parameters['model_name'] = 'Titanic.ckpt'
+    parameters['model_path'] = 'model/Titanic.ckpt'
     parameters['n_input'], parameters['n_features'] = X_train.shape
     parameters['n_hidden'] = 2
-    parameters['hidden_dim'] = 10
+    parameters['hidden_dim'] = 50
     parameters['n_class'] = 1
-    parameters['learning_rate'] = 0.03
-    parameters['training_epochs'] = 3000
-    parameters['batch_size'] = 20
+    parameters['learning_rate'] = 0.3
+    parameters['training_epochs'] = 10000
     parameters['visualize'] = False
     if (len(argv) > 1 and argv[1] == '-v'):
         parameters['visualize'] = True
 
         # Get model & train
     titanic_model = model.make_model(parameters)
-    model.neural_network(X_train, Y_train, parameters, titanic_model)
+    model.neural_network(X_train, Y_train, parameters, titanic_model, X_test, Y_test)
         # Print accuracy
-    #accuracy.Accuracy(parameters, model, X_train, Y_train, X_test, Y_test)
+    accuracy.Accuracy(parameters, titanic_model, X_train, Y_train, X_test, Y_test)
         # Output the submission to estimation.csv
     # ...
 

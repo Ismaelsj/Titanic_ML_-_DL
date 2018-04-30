@@ -85,4 +85,8 @@ def training_features(data_train):
     Y = data_train['Survived']
         # Split the data to 80/20
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+    X_train = X_train.values
+    X_test = X_test.values
+    Y_train = Y_train.values.reshape(-1, 1)
+    Y_test = Y_test.values.reshape(-1, 1)
     return X, Y, X_train, X_test, Y_train, Y_test
