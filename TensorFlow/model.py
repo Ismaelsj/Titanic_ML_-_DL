@@ -55,7 +55,6 @@ def make_model(parameters):
     # Model
     layer2 = tf.nn.sigmoid(tf.add(tf.matmul(X, Thetas['Theta1']), Biases['Bias1']))
     layer3 = tf.nn.sigmoid(tf.add(tf.matmul(layer2, Thetas['Theta2']), Biases['Bias2']))
-    # hypothesis = tf.sigmoid(tf.add(tf.matmul(layer3, Thetas['Theta3']), Biases['Bias3']))
     hypothesis = tf.add(tf.matmul(layer3, Thetas['Theta3']), Biases['Bias3'])
 
     # Cost & Trainer
@@ -92,21 +91,16 @@ def neural_network(x_train, y_train, parameters, model, x_test, y_test):
         sess.run(init)
         # Training cycle
         for epoch in range(training_epochs):
-            epoch_cost = 0.
             # Backprpagation & Cost
             _, train_cost = sess.run([model['train_op'], model['cost']], feed_dict={model['X']: x_train, model['Y']: y_train})
-            # Compute average loss & save in list
-            epoch_cost = train_cost
             test_cost = sess.run(model['cost'], feed_dict={model['X']: x_test, model['Y']: y_test})
-            epoch_test = test_cost
+            # Compute average loss & save in list
             if (epoch % 10 == 0):
                 epoch_list.append(epoch)
-                cost_list.append(epoch_cost)
-                test_list.append(epoch_test)
+                cost_list.append(train_cost)
+                test_list.append(test_cost)
             if (epoch % 100 == 0):
-                print ("Cost after epoch {0}: {1}".format(epoch, epoch_cost)) 
-       # print("Test accuracy : {}%".format(sess.run(model['accuracy'], feed_dict={model['X']: x_test.values, model['Y']: y_test.values.reshape(-1, 1)}) * 100))
-       # print("Train accuracy : {}%".format(sess.run(model['accuracy'], feed_dict={model['X']: x_train.values, model['Y']: y_train.values.reshape(-1, 1)}) * 100))
+                print ("Cost after epoch {0}: {1}".format(epoch, train_cost)) 
         save_path = saver.save(sess, parameters['model_path'])
         print("\nModel saved in path: {}\n".format(save_path))
     if parameters['visualize'] == True:

@@ -90,3 +90,9 @@ def training_features(data_train):
     Y_train = Y_train.values.reshape(-1, 1)
     Y_test = Y_test.values.reshape(-1, 1)
     return X, Y, X_train, X_test, Y_train, Y_test
+
+def test_features(data_test):
+    X_data_test = data_test.drop(['PassengerId'], axis=1)
+        # Split the data to 80/20
+    X_data_test = X_data_test.values
+    return X_data_test
