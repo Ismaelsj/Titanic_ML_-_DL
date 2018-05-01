@@ -14,7 +14,7 @@ For each PassengerId in the test set.
 
 	Usage: python3 main.py [-n]
 
-		Use '-n' to use a model already build.
+		- Use '-n' to use a model already build.
 
 
 - TensorFlow, running with neural network:
@@ -23,8 +23,9 @@ For each PassengerId in the test set.
 			- Numpy
 			- Pandas
 			- tensoflow
+			- Sklearn
 
 	Usage: python3 main.py [-v][-n]
 
-		Use '-v' to use visualize cost.
-		Use '-n' to train a new model.
+		- Use '-v' to use visualize cost.
+		- Use '-n' to train a new model.
