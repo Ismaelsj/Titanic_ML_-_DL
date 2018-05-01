@@ -19,4 +19,4 @@ def Estimation(parameters, model, X_test, Id_test):
         prediction = pd.DataFrame(sess.run(model['prediction'], feed_dict={model['X']: X_test})).astype(int)
         output = pd .DataFrame({'PassengerId': Id_test, 'Survived': prediction[0]})
         output.to_csv("estimation.csv", index=False)
-        print("Writting output to estimation.csv\n")
+        print("Writting output to estimation.csv")

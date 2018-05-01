@@ -4,31 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-    # Create random batches
-def random_batches(X, Y, batch_size):
-    # Concat X & Y inputs to shuffle
-    m, _ = X.shape
-    big_batch = []
-    data = pd.concat([X, Y], axis=1)
-    data = data.sample(frac=1)
-    # Divide data into batch_size batches
-    nb = 0
-    for i in range(m):
-        if i % batch_size == 0 and i != 0:
-            batch_X = data[nb : i].drop(['Survived'], axis=1).values
-            batch_Y = data[nb : i].Survived.values.reshape(-1, 1)
-            nb = i;
-            batches = (batch_X, batch_Y)
-            big_batch.append(batches)
-    # Handling the end case: last batch < batch_size
-    if nb < m:
-        batch_X = data[nb : i].drop(['Survived'], axis=1).values
-        batch_Y = data[nb : i].Survived.values.reshape(-1, 1)
-        batches = (batch_X, batch_Y)
-        big_batch.append(batches)
-    return big_batch
-
-
 def make_model(parameters):
     # Network parmaeters
     n_features = parameters['n_features']
