@@ -21,10 +21,10 @@ def main():
     parameters['model_path'] = 'model/Titanic.ckpt'
     parameters['n_input'], parameters['n_features'] = X_train.shape
     parameters['n_hidden'] = 2
-    parameters['hidden_dim'] = 50
+    parameters['hidden_dim'] = 40
     parameters['n_class'] = 1
-    parameters['learning_rate'] = 0.3
-    parameters['training_epochs'] = 15000
+    parameters['learning_rate'] = 0.01
+    parameters['training_epochs'] = 4000
     parameters['visualize'] = False
     if ((len(argv) > 1 and argv[1] == '-v') or (len(argv) > 2 and argv[2] == '-v')):
         parameters['visualize'] = True

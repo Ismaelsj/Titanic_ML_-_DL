@@ -17,9 +17,9 @@ def make_model(parameters):
 
     # Layers; Weights & Biases
     Thetas = {
-        'Theta1': tf.Variable(tf.random_normal([n_features,hidden_dim], -1, 1)),
-        'Theta2': tf.Variable(tf.random_normal([hidden_dim,hidden_dim], -1, 1)),
-        'Theta3': tf.Variable(tf.random_normal([hidden_dim,n_class], -1, 1))
+        'Theta1': tf.Variable(tf.random_normal([n_features,hidden_dim])),
+        'Theta2': tf.Variable(tf.random_normal([hidden_dim,hidden_dim])),
+        'Theta3': tf.Variable(tf.random_normal([hidden_dim,n_class]))
         }
     Biases = {
         'Bias1': tf.Variable(tf.random_normal([1])),

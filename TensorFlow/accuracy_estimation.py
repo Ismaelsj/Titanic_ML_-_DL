@@ -7,8 +7,8 @@ def Accuracy(parameters, model, X_train, Y_train, X_test, Y_test):
     with tf.Session() as sess:
         sess.run(init_op)
         saver.restore(sess, parameters['model_path'])
-        print ("Train Accuracy: {}".format(sess.run(model['accuracy'], feed_dict={model['X']: X_train, model['Y']: Y_train}) * 100))
-        print ("Test Accuracy: {}\n".format(sess.run(model['accuracy'], feed_dict={model['X']: X_test, model['Y']: Y_test}) * 100))
+        print ("Train Accuracy: {}%".format(sess.run(model['accuracy'], feed_dict={model['X']: X_train, model['Y']: Y_train}) * 100))
+        print ("Test Accuracy: {}%\n".format(sess.run(model['accuracy'], feed_dict={model['X']: X_test, model['Y']: Y_test}) * 100))
 
 def Estimation(parameters, model, X_test, Id_test):
     saver = tf.train.Saver()
