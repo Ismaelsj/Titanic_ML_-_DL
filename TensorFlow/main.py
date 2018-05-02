@@ -24,7 +24,7 @@ def main():
     parameters['hidden_dim'] = 40
     parameters['n_class'] = 1
     parameters['learning_rate'] = 0.01
-    parameters['training_epochs'] = 4000
+    parameters['training_epochs'] = 15000
     parameters['visualize'] = False
     if ((len(argv) > 1 and argv[1] == '-v') or (len(argv) > 2 and argv[2] == '-v')):
         parameters['visualize'] = True
